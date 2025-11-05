@@ -294,7 +294,7 @@
         saveJSON('breadCosts', breadCosts);
       });
     });
-    saveJSON('breadCosts', loadJSON('breadCosts', {}));
+    saveJSON('breadCosts', breadCosts);
   }
 
   breadCostSelect.addEventListener('change', renderCostTable);
