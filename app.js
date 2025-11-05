@@ -422,7 +422,7 @@
   });
 
   // --- JsonBin Integration (replace keys before use) ---
-  const JSONBIN_API_KEY = '$2a$10$f7X1fUWh/X0tm2HM2OlBSurPPVf8SVtL15MKdSZ4joPSNmkydSnKG'; // <-- PUT YOUR KEY HERE (do NOT store secret keys client-side for production)
+  const JSONBIN_API_KEY = '$2a$10$6OcoOp76VA5GbO0qvmWNUeRrQyCY60X.b7xxK31WS/nhiwlrbcQZa'; // <-- PUT YOUR KEY HERE (do NOT store secret keys client-side for production)
   const JSONBIN_BIN_ID = '68f614a4d0ea881f40ae2556';  // <-- PUT YOUR BIN ID HERE
 
   const uploadBtn = $('#uploadJsonBinBtn');
