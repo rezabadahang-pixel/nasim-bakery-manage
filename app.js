@@ -204,7 +204,10 @@
     recipes.push({ bread, material, qty });
     saveJSON('recipes', recipes);
     recipeQty.value = '';
+    const currentBread = bread;
     renderAll();
+    recipeBread.value = currentBread;
+    renderRecipes();
     showToast('Recipe added');
   });
 
