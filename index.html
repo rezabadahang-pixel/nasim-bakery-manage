@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover" />
+  <title>Nasim Bakery</title>
+
+  <!-- PWA manifest & apple meta -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Nasim Bakery" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>🍞 Nasim Bakery</h1>
+    <nav id="mainNav" aria-label="Main Navigation">
+      <button class="nav-btn" data-target="bread">Bread</button>
+      <button class="nav-btn" data-target="materials">Materials</button>
+      <button class="nav-btn" data-target="recipe">Recipe</button>
+      <button class="nav-btn" data-target="total">Cost of Recipe</button>
+      <button class="nav-btn" data-target="sale">Sales</button>
+      <button class="nav-btn" data-target="importExport">Import/Export</button>
+    </nav>
+  </header>
+
+  <main id="pages">
+    <section id="bread" class="page active" role="region" aria-labelledby="bread-title">
+      <h2 id="bread-title">Bread Management</h2>
+      <input id="breadName" type="text" placeholder="Enter bread name" />
+      <button class="add-btn" id="addBreadBtn">Add Bread</button>
+      <p id="msg" class="message" aria-live="polite"></p>
+      <ul id="breadList" class="list"></ul>
+    </section>
+
+    <section id="materials" class="page" role="region" aria-labelledby="materials-title">
+      <h2 id="materials-title">Materials</h2>
+      <input id="matName" type="text" placeholder="Material Name" />
+      <input id="matPrice" type="number" placeholder="Price per kg" />
+      <button class="add-btn" id="addMatBtn">Add Material</button>
+      <input id="searchMaterial" type="text" placeholder="Search Materials..." />
+      <p id="matMsg" class="message" aria-live="polite"></p>
+      <table id="matTable"><thead><tr><th>Material</th><th>Price</th><th>Action</th></tr></thead><tbody></tbody></table>
+    </section>
+
+    <section id="recipe" class="page" role="region" aria-labelledby="recipe-title">
+      <h2 id="recipe-title">Recipe</h2>
+      <select id="recipeBread"></select>
+      <select id="recipeMaterial"></select>
+      <input id="recipeQty" type="number" placeholder="Quantity (g)" min="1" />
+      <button class="add-btn" id="addRecipeBtn">Add</button>
+      <table id="recipeTable"><thead><tr><th>Bread</th><th>Material</th><th>Quantity</th><th>Action</th></tr></thead><tbody></tbody></table>
+    </section>
+
+    <section id="total" class="page" role="region" aria-labelledby="total-title">
+      <h2 id="total-title">Cost of Recipe</h2>
+      <select id="breadCostSelect"></select>
+      <table id="costTable"><thead><tr><th>Bread</th><th>Cost of Recipe</th><th>Number of Breads</th><th>Cost of One Bread</th><th>Action</th></tr></thead><tbody></tbody></table>
+    </section>
+
+    <section id="sale" class="page" role="region" aria-labelledby="sale-title">
+      <h2 id="sale-title">Sales Management</h2>
+
+      <div class="sale-controls">
+        <label for="customerName">Customer Name:</label>
+        <input id="customerName" type="text" placeholder="Enter customer name" />
+        <button class="add-btn" id="printInvoiceBtn">Print Invoice</button>
+        <button class="add-btn" id="clearSalesBtn" style="background:#d9534f;">Clear Sales</button>
+      </div>
+
+      <label for="saleBreadSelect">Select Bread:</label>
+      <select id="saleBreadSelect"></select>
+
+      <div class="sale-table-wrap">
+        <table id="saleTable">
+          <thead><tr><th>Bread</th><th>Benefit %</th><th>Number</th><th>Sale Rate</th><th>Action</th></tr></thead>
+          <tbody></tbody>
+          <tfoot><tr><td colspan="4" style="text-align:right;">Total Sales:</td><td id="totalSales">0</td></tr></tfoot>
+        </table>
+      </div>
+    </section>
+
+    <section id="importExport" class="page" role="region" aria-labelledby="importExport-title">
+      <h2 id="importExport-title">Import / Export</h2>
+      <textarea id="importBread" placeholder="Paste JSON here"></textarea>
+      <button class="add-btn" id="importBreadBtn">Import</button>
+      <button class="add-btn" id="exportBtn">Export JSON</button>
+      <pre id="exportData" class="export-pre"></pre>
+      <button class="add-btn" id="uploadJsonBinBtn" style="background:#28a745;">Upload to jsonbin</button>
+      <button class="add-btn" id="downloadJsonBinBtn" style="background:#007bff;">Download from jsonbin</button>
+    </section>
+  </main>
+
+  <!-- toast container -->
+  <div id="toast" class="toast" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

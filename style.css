@@ -1,0 +1,45 @@
+/* Base / Reset */
+* { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+body { background:#f9f9f9; color:#333; padding:20px; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+header { background:#ff6b00; color:white; padding:18px 10px; text-align:center; border-radius:8px; }
+h1 { font-size:24px; margin-bottom:6px; }
+nav { display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin-top:10px; }
+.nav-btn { background:white; color:#ff6b00; border:none; padding:10px 14px; border-radius:6px; font-weight:600; cursor:pointer; transition:transform 0.15s ease, background 0.15s ease; box-shadow:0 2px 4px rgba(0,0,0,0.08); -webkit-tap-highlight-color:transparent; }
+.nav-btn:active { transform:scale(0.98); }
+main { padding:14px 0; max-width:980px; margin:0 auto; }
+.page { display:none; }
+.page.active { display:block; animation:fadeIn .25s ease; }
+@keyframes fadeIn { from{opacity:0; transform:translateY(6px)} to{opacity:1; transform:none} }
+
+/* Controls */
+input, select, button.add-btn, textarea { padding:8px 10px; margin:6px 0; border-radius:6px; border:1px solid #ddd; font-size:15px; width:auto; }
+button.add-btn { background:#ff6b00; color:white; border:none; font-weight:600; cursor:pointer; transition:background .15s ease; }
+button.add-btn:hover { background:#ff7b33; }
+
+/* Lists & tables */
+.list { list-style:none; padding:0; margin-top:8px; }
+.list li { background:white; margin:6px 0; padding:10px; border-radius:6px; display:flex; gap:8px; align-items:center; justify-content:space-between; box-shadow:0 1px 3px rgba(0,0,0,0.04); }
+.table-wrap, table { width:100%; border-collapse:collapse; margin-top:10px; background:white; border-radius:6px; overflow:hidden; box-shadow:0 2px 4px rgba(0,0,0,0.04); }
+th, td { padding:10px; text-align:center; border-bottom:1px solid #eee; font-size:14px; }
+th { background:#ffecd1; font-weight:600; }
+
+/* Small buttons inside lists */
+li button, table button { margin-left:5px; padding:6px 10px; border:none; border-radius:4px; cursor:pointer; font-size:13px; }
+.edit-btn { background:#ffa500; color:white; }
+.delete-btn { background:#ff4500; color:white; }
+
+/* messages and small helpers */
+.message { color:#b94a48; font-size:14px; margin:6px 0; min-height:20px; }
+.export-pre { background:#eee; padding:10px; max-height:200px; overflow:auto; margin-top:8px; }
+
+/* sale area */
+.sale-table-wrap { max-height:300px; overflow:auto; border:1px solid #eee; margin-top:10px; border-radius:6px; }
+
+/* toast */
+.toast { position:fixed; left:50%; transform:translateX(-50%); bottom:22px; min-width:160px; max-width:90%; background:rgba(0,0,0,0.8); color:white; padding:10px 14px; border-radius:8px; display:none; z-index:9999; font-size:14px; }
+
+/* responsive tweaks */
+@media(max-width:800px) {
+  .nav-btn { flex:1 1 45%; }
+  input, select, textarea { width:100%; box-sizing:border-box; }
+}
